@@ -28,7 +28,7 @@ Clone este repositorio en su máquina local utilizando Git:
 
 git clone https://github.com/SuarezSebastian2/SeguimientoPedidosWeb.git
 
-###2. Instalar Dependencias
+### 2. Instalar Dependencias
 Asegúrese de tener Node.js y npm instalados en su sistema. Luego, navegue a la carpeta del frontend y del backend y ejecute el siguiente comando en cada una para instalar las dependencias:
 
 cd frontend
@@ -44,10 +44,10 @@ sequelize
 mysql2
 cors
 
-###3. Configurar la Base de Datos
+### 3. Configurar la Base de Datos
 Asegúrese de tener un servidor de base de datos MySQL en funcionamiento. Cree una base de datos llamada pedidos y configure las credenciales en el archivo sequelize.js en la carpeta config del backend.
 
-###4. Iniciar el Servidor
+### 4. Iniciar el Servidor
 Ejecute el servidor backend y frontend por separado utilizando los siguientes comandos:
 
 Para el backend:
@@ -58,7 +58,7 @@ Para el frontend:
 cd frontend
 npm start
 
-###5. Acceder a la Aplicación
+### 5. Acceder a la Aplicación
 Abra su navegador web y vaya a http://localhost:3000 para acceder a la aplicación.
 
 Versión 1.1.0 
