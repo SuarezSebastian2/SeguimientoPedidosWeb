@@ -97,5 +97,3 @@ VALUES
     (10, 'Casco de Ciclismo', 1, 19.99),
     (10, 'Luz Trasera para Bicicleta', 1, 9.99),
     (10, 'Guantes de Ciclismo', 1, 14.99);
-
-
