@@ -1,6 +1,7 @@
 # SeguimientoPedidosWeb
 
  Este proyecto es una aplicación de seguimiento de pedidos que permite a los usuarios consultar información detallada sobre sus pedidos. Proporciona la capacidad de buscar pedidos por código, tipo de documento y documento del cliente. Además, muestra información detallada sobre los pedidos, incluyendo los productos, cantidades, precios y el estado de entrega estimado. La aplicación está dividida en un backend y un frontend, con el backend manejando las solicitudes y la base de datos, y el frontend proporcionando la interfaz de usuario.
+Desarrollada en React y NodeJs
 
 ![image](https://github.com/SuarezSebastian2/SeguimientoPedidosWeb/assets/78248849/6b44087c-206c-4fad-8fc1-5d20df9751a2)
 
@@ -25,7 +26,7 @@ Siga estos pasos para configurar el proyecto en su entorno local:
 Clone este repositorio en su máquina local utilizando Git:
 
 
-git clone https://github.com/tu-usuario/nombre-del-repositorio.git
+git clone https://github.com/SuarezSebastian2/SeguimientoPedidosWeb.git
 
 ###2. Instalar Dependencias
 Asegúrese de tener Node.js y npm instalados en su sistema. Luego, navegue a la carpeta del frontend y del backend y ejecute el siguiente comando en cada una para instalar las dependencias:
