@@ -1,0 +1,101 @@
+CREATE DATABASE Pedidos;
+USE Pedidos;
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo_pedido VARCHAR(20) NOT NULL,
+    tipo_documento VARCHAR(20) NOT NULL,
+    nombre_cliente VARCHAR(50) NOT NULL,
+    documento_cliente VARCHAR(20) NOT NULL,
+    estado_pedido VARCHAR(20),
+    direccion_entrega VARCHAR(255),
+    fecha_estimada_entrega DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- INSERTAR PEDIDOS
+INSERT INTO pedidos (codigo_pedido, tipo_documento, nombre_cliente, documento_cliente, estado_pedido, fecha_estimada_entrega, direccion_entrega)
+VALUES 
+    ('PED001', 'DNI', 'Juan Pérez', '12345678', 'En proceso', '2023-10-10', 'Calle Falsa 123'),
+    ('PED002', 'RUC', 'María Rodríguez', '87654321', 'Entregado', '2023-09-15', 'Avenida Imaginaria 456'),
+    ('PED003', 'DNI', 'Carlos Sánchez', '98765432', 'Pendiente', '2023-10-20', 'Carrera Inexistente 789'),
+    ('PED004', 'CC', 'Ana López', '23456789', 'Entregado', '2023-08-05', 'Calle Principal 567'),
+    ('PED005', 'CE', 'Laura Martínez', '34567890', 'En proceso', '2023-11-30', 'Avenida Central 890'),
+    ('PED006', 'TI', 'Pedro González', '45678901', 'Pendiente', '2023-10-25', 'Plaza Mayor 123'),
+    ('PED007', 'DNI', 'Sofía Fernández', '56789012', 'En proceso', '2023-09-28', 'Calle Real 456'),
+    ('PED008', 'RUC', 'Luis Torres', '67890123', 'Entregado', '2023-07-15', 'Avenida Principal 789'),
+    ('PED009', 'CC', 'Elena Vargas', '78901234', 'En proceso', '2023-11-05', 'Carrera Central 234'),
+    ('PED010', 'DNI', 'Javier Herrera', '89012345', 'Pendiente', '2023-12-10', 'Calle Nueva 678');
+
+
+CREATE TABLE detalles_pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT,
+    producto VARCHAR(255),
+    cantidad INT,
+    precio DECIMAL(10, 2),
+    FOREIGN KEY (pedido_id) REFERENCES pedidos(id)
+);
+
+INSERT INTO detalles_pedidos (pedido_id, producto, cantidad, precio)
+VALUES 
+    -- Pedido 1
+    (1, 'Camiseta', 3, 25.99),
+    (1, 'Pantalón', 2, 15.50),
+    (1, 'Zapatos', 1, 49.99),
+    (1, 'Calcetines', 5, 3.99),
+    (1, 'Gorra', 1, 7.99),
+    (1, 'Bufanda', 2, 8.75),
+    (1, 'Reloj', 1, 65.00),
+    (1, 'Pulsera', 2, 12.99),
+    (1, 'Anillo', 1, 18.99),
+    (1, 'Lentes de Sol', 2, 29.99),
+    -- Pedido 2
+    (2, 'Camisa', 2, 29.99),
+    (2, 'Pantalón de Mezclilla', 2, 19.99),
+    (2, 'Chaqueta de Cuero', 1, 89.99),
+    (2, 'Botas', 1, 59.99),
+    (2, 'Gorra', 1, 7.99),
+    (2, 'Bufanda', 1, 8.75),
+    (2, 'Lentes de Sol', 1, 14.99),
+    -- Pedido 3
+    (3, 'Zapatillas Deportivas', 3, 39.99),
+    (3, 'Camiseta Deportiva', 3, 22.99),
+    (3, 'Pantalones Deportivos', 2, 18.99),
+    (3, 'Reloj Deportivo', 1, 45.00),
+    (3, 'Gorra Deportiva', 1, 12.99),
+    (3, 'Botella de Agua', 2, 5.99),
+-- Pedido 4
+    (4, 'Vestido', 1, 35.99),
+    (4, 'Zapatos de Tacón', 1, 39.99),
+    (4, 'Collar de Perlas', 1, 25.99),
+    (4, 'Bolso de Mano', 1, 19.99),
+-- Pedido 5
+    (5, 'Silla de Oficina', 1, 89.99),
+    (5, 'Escritorio de Madera', 1, 149.99),
+    (5, 'Lámpara de Escritorio', 1, 19.99),
+-- Pedido 6
+    (6, 'Tablet', 1, 199.99),
+    (6, 'Auriculares Inalámbricos', 1, 49.99),
+    (6, 'Teclado Inalámbrico', 1, 29.99),
+    (6, 'Ratón Inalámbrico', 1, 19.99),
+    (6, 'Funda de Tablet', 1, 9.99),
+-- Pedido 7
+    (7, 'Pinturas al Óleo (Juego de 12)', 1, 59.99),
+    (7, 'Lienzo (Pack de 5)', 1, 19.99),
+    (7, 'Pinceles de Artista (Set de 10)', 1, 29.99),
+-- Pedido 8
+    (8, 'Libros de Ficción (Lote de 5)', 1, 39.99),
+    (8, 'Lámpara de Lectura', 1, 14.99),
+    (8, 'Mesa de Centro de Madera', 1, 79.99),
+-- Pedido 9
+    (9, 'Juegos de Mesa (Pack de 3)', 1, 49.99),
+    (9, 'Pelotas de Fútbol (Set de 6)', 1, 29.99),
+    (9, 'Muñecas de Colección (Lote de 4)', 1, 39.99),
+-- Pedido 10
+    (10, 'Bicicleta de Montaña', 1, 299.99),
+    (10, 'Casco de Ciclismo', 1, 19.99),
+    (10, 'Luz Trasera para Bicicleta', 1, 9.99),
+    (10, 'Guantes de Ciclismo', 1, 14.99);
+
+
